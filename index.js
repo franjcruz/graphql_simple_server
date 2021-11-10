@@ -98,30 +98,98 @@ broker.createService({
       handler(ctx) {
         const mock = {
           GeneralGaugeProps: {
-            value: 10,
-            min: 4,
-            max: 12,
+            value: randomIntFromInterval(5, 10),
+            min: randomIntFromInterval(1, 3),
+            max: randomIntFromInterval(8, 13),
           },
           PerformanceGaugeProps: {
-            value: 10,
-            min: 4,
-            max: 12,
+            value: randomIntFromInterval(5, 10),
+            min: randomIntFromInterval(1, 3),
+            max: randomIntFromInterval(8, 13),
           },
           AvailabilityGaugeProps: {
-            value: 10,
-            min: 4,
-            max: 12,
+            value: randomIntFromInterval(5, 10),
+            min: randomIntFromInterval(1, 3),
+            max: randomIntFromInterval(8, 13),
           },
           QualityGaugeProps: {
-            value: 10,
-            min: 4,
-            max: 12,
+            value: randomIntFromInterval(5, 10),
+            min: randomIntFromInterval(1, 3),
+            max: randomIntFromInterval(8, 13),
           },
           LineChartProps: {
             data: [
               {
-                id: '1a',
-                data: [{ x: '1', y: 1 }],
+                id: '06.00',
+                data: [
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                ],
+              },
+              {
+                id: '08.00',
+                data: [
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                ],
+              },
+              {
+                id: '10.00',
+                data: [
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                ],
+              },
+              {
+                id: '12.00',
+                data: [
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                ],
+              },
+              {
+                id: '14.00',
+                data: [
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                ],
+              },
+              {
+                id: '16.00',
+                data: [
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                ],
+              },
+              {
+                id: '18.00',
+                data: [
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                ],
+              },
+              {
+                id: '20.00',
+                data: [
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                ],
               },
             ],
           },
@@ -190,3 +258,8 @@ broker.start().then(async () => {
     '----------------------------------------------------------'
   );
 });
+
+const randomIntFromInterval = (min, max) => {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
