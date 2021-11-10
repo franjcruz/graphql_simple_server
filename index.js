@@ -2,6 +2,7 @@
 
 const { ServiceBroker } = require('moleculer');
 const { MoleculerClientError } = require('moleculer').Errors;
+const { gql } = require('graphql-request');
 
 const ApiGateway = require('moleculer-web');
 const { ApolloService } = require('./apolloService');
@@ -60,6 +61,78 @@ broker.createService({
         return `Hello ${ctx.params.name}`;
       },
     },
+    dataOEE: {
+      graphql: {
+        type: gql`
+          type GaugeProps {
+            value: Int
+            min: Int
+            max: Int
+          }
+
+          type LineChartProps {
+            data: [LineChartData]
+          }
+
+          type LineChartData {
+            id: String
+            data: [LineChartPoint]
+          }
+
+          type LineChartPoint {
+            x: String
+            y: Int
+          }
+
+          type OEEData {
+            GeneralGaugeProps: GaugeProps!
+            PerformanceGaugeProps: GaugeProps!
+            AvailabilityGaugeProps: GaugeProps!
+            QualityGaugeProps: GaugeProps!
+            LineChartProps: LineChartProps!
+          }
+        `,
+        subscription: 'dataOEE: OEEData',
+        tags: ['TEST'],
+      },
+      handler(ctx) {
+        const mock = {
+          GeneralGaugeProps: {
+            value: 10,
+            min: 4,
+            max: 12,
+          },
+          PerformanceGaugeProps: {
+            value: 10,
+            min: 4,
+            max: 12,
+          },
+          AvailabilityGaugeProps: {
+            value: 10,
+            min: 4,
+            max: 12,
+          },
+          QualityGaugeProps: {
+            value: 10,
+            min: 4,
+            max: 12,
+          },
+          LineChartProps: {
+            data: [
+              {
+                id: '1a',
+                data: [{ x: '1', y: 1 }],
+              },
+            ],
+          },
+          // setError: false,
+          // setErrorMessage: false,
+        };
+
+        return mock;
+      },
+    },
+
     update: {
       graphql: {
         subscription: 'update: String!',
