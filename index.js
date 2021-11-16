@@ -98,24 +98,24 @@ broker.createService({
       handler(ctx) {
         const mock = {
           GeneralGaugeProps: {
-            value: randomIntFromInterval(5, 10),
-            min: randomIntFromInterval(1, 3),
-            max: randomIntFromInterval(8, 13),
+            value: randomIntFromInterval(0, 100),
+            min: 0,
+            max: 100,
           },
           PerformanceGaugeProps: {
-            value: randomIntFromInterval(5, 10),
-            min: randomIntFromInterval(1, 3),
-            max: randomIntFromInterval(8, 13),
+            value: randomIntFromInterval(0, 100),
+            min: 0,
+            max: 100,
           },
           AvailabilityGaugeProps: {
-            value: randomIntFromInterval(5, 10),
-            min: randomIntFromInterval(1, 3),
-            max: randomIntFromInterval(8, 13),
+            value: randomIntFromInterval(0, 100),
+            min: 0,
+            max: 100,
           },
           QualityGaugeProps: {
-            value: randomIntFromInterval(5, 10),
-            min: randomIntFromInterval(1, 3),
-            max: randomIntFromInterval(8, 13),
+            value: randomIntFromInterval(0, 100),
+            min: 0,
+            max: 100,
           },
           LineChartProps: {
             data: [
