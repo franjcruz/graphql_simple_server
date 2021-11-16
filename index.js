@@ -126,11 +126,39 @@ broker.createService({
                     x: randomIntFromInterval(0, 16) + '',
                     y: randomIntFromInterval(1, 120),
                   },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
                 ],
               },
               {
                 id: '08.00',
                 data: [
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
                   {
                     x: randomIntFromInterval(0, 16) + '',
                     y: randomIntFromInterval(1, 120),
@@ -144,11 +172,35 @@ broker.createService({
                     x: randomIntFromInterval(0, 16) + '',
                     y: randomIntFromInterval(1, 120),
                   },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
                 ],
               },
               {
                 id: '12.00',
                 data: [
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
                   {
                     x: randomIntFromInterval(0, 16) + '',
                     y: randomIntFromInterval(1, 120),
@@ -162,11 +214,35 @@ broker.createService({
                     x: randomIntFromInterval(0, 16) + '',
                     y: randomIntFromInterval(1, 120),
                   },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
                 ],
               },
               {
                 id: '16.00',
                 data: [
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
                   {
                     x: randomIntFromInterval(0, 16) + '',
                     y: randomIntFromInterval(1, 120),
@@ -180,11 +256,35 @@ broker.createService({
                     x: randomIntFromInterval(0, 16) + '',
                     y: randomIntFromInterval(1, 120),
                   },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
                 ],
               },
               {
                 id: '20.00',
                 data: [
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: randomIntFromInterval(0, 16) + '',
+                    y: randomIntFromInterval(1, 120),
+                  },
                   {
                     x: randomIntFromInterval(0, 16) + '',
                     y: randomIntFromInterval(1, 120),
