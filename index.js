@@ -120,173 +120,100 @@ broker.createService({
           LineChartProps: {
             data: [
               {
-                id: '06.00',
+                id: 'Performance',
                 data: [
                   {
-                    x: randomIntFromInterval(0, 16) + '',
+                    x: '06:00',
                     y: randomIntFromInterval(1, 120),
                   },
                   {
-                    x: randomIntFromInterval(0, 16) + '',
+                    x: '08:00',
                     y: randomIntFromInterval(1, 120),
                   },
                   {
-                    x: randomIntFromInterval(0, 16) + '',
+                    x: '10:00',
                     y: randomIntFromInterval(1, 120),
                   },
                   {
-                    x: randomIntFromInterval(0, 16) + '',
+                    x: '12:00',
                     y: randomIntFromInterval(1, 120),
                   },
                   {
-                    x: randomIntFromInterval(0, 16) + '',
+                    x: '14:00',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: '16:00',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: '18:00',
                     y: randomIntFromInterval(1, 120),
                   },
                 ],
               },
               {
-                id: '08.00',
+                id: 'Quality',
                 data: [
                   {
-                    x: randomIntFromInterval(0, 16) + '',
+                    x: '06:00',
                     y: randomIntFromInterval(1, 120),
                   },
                   {
-                    x: randomIntFromInterval(0, 16) + '',
+                    x: '08:00',
                     y: randomIntFromInterval(1, 120),
                   },
                   {
-                    x: randomIntFromInterval(0, 16) + '',
+                    x: '10:00',
                     y: randomIntFromInterval(1, 120),
                   },
                   {
-                    x: randomIntFromInterval(0, 16) + '',
+                    x: '12:00',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: '14:00',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: '16:00',
+                    y: randomIntFromInterval(1, 120),
+                  },
+                  {
+                    x: '18:00',
                     y: randomIntFromInterval(1, 120),
                   },
                 ],
               },
               {
-                id: '10.00',
+                id: 'Availability',
                 data: [
                   {
-                    x: randomIntFromInterval(0, 16) + '',
+                    x: '06:00',
                     y: randomIntFromInterval(1, 120),
                   },
                   {
-                    x: randomIntFromInterval(0, 16) + '',
+                    x: '08:00',
                     y: randomIntFromInterval(1, 120),
                   },
                   {
-                    x: randomIntFromInterval(0, 16) + '',
+                    x: '10:00',
                     y: randomIntFromInterval(1, 120),
                   },
                   {
-                    x: randomIntFromInterval(0, 16) + '',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                ],
-              },
-              {
-                id: '12.00',
-                data: [
-                  {
-                    x: randomIntFromInterval(0, 16) + '',
+                    x: '12:00',
                     y: randomIntFromInterval(1, 120),
                   },
                   {
-                    x: randomIntFromInterval(0, 16) + '',
+                    x: '14:00',
                     y: randomIntFromInterval(1, 120),
                   },
                   {
-                    x: randomIntFromInterval(0, 16) + '',
+                    x: '16:00',
                     y: randomIntFromInterval(1, 120),
                   },
                   {
-                    x: randomIntFromInterval(0, 16) + '',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                ],
-              },
-              {
-                id: '14.00',
-                data: [
-                  {
-                    x: randomIntFromInterval(0, 16) + '',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: randomIntFromInterval(0, 16) + '',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: randomIntFromInterval(0, 16) + '',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: randomIntFromInterval(0, 16) + '',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                ],
-              },
-              {
-                id: '16.00',
-                data: [
-                  {
-                    x: randomIntFromInterval(0, 16) + '',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: randomIntFromInterval(0, 16) + '',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: randomIntFromInterval(0, 16) + '',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: randomIntFromInterval(0, 16) + '',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                ],
-              },
-              {
-                id: '18.00',
-                data: [
-                  {
-                    x: randomIntFromInterval(0, 16) + '',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: randomIntFromInterval(0, 16) + '',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: randomIntFromInterval(0, 16) + '',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: randomIntFromInterval(0, 16) + '',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                ],
-              },
-              {
-                id: '20.00',
-                data: [
-                  {
-                    x: randomIntFromInterval(0, 16) + '',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: randomIntFromInterval(0, 16) + '',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: randomIntFromInterval(0, 16) + '',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: randomIntFromInterval(0, 16) + '',
+                    x: '18:00',
                     y: randomIntFromInterval(1, 120),
                   },
                 ],
