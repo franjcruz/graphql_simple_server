@@ -9,6 +9,31 @@ const { ApolloService } = require('./apolloService');
 
 const broker = new ServiceBroker({ logLevel: 'info', hotReload: true });
 
+const minValue = 0;
+const maxValue = 100;
+const minAvgValue = 60;
+const maxValueVariation = 10;
+
+const getNextValue = ( currentValue ) => {
+
+  let nextValue = currentValue + randomIntFromInterval((-1 * maxValueVariation), maxValueVariation);
+
+  if ( nextValue > maxValue ) {
+    nextValue = maxValue;
+  } else if ( nextValue < minAvgValue ) {
+    nextValue = minAvgValue;
+  }
+
+  return nextValue;
+
+};
+
+let currentValues = {
+  performance: [((maxValue + minAvgValue) / 2)],
+  availability: [((maxValue + minAvgValue) / 2)],
+  quality: [((maxValue + minAvgValue) / 2)],
+};
+
 broker.createService({
   name: 'api',
 
@@ -99,23 +124,23 @@ broker.createService({
         const mock = {
           GeneralGaugeProps: {
             value: randomIntFromInterval(0, 100),
-            min: 0,
-            max: 100,
+            min: minValue,
+            max: maxValue,
           },
           PerformanceGaugeProps: {
-            value: randomIntFromInterval(0, 100),
-            min: 0,
-            max: 100,
+            value: currentValues.performance[currentValues.performance.length-1],
+            min: minValue,
+            max: maxValue,
           },
           AvailabilityGaugeProps: {
-            value: randomIntFromInterval(0, 100),
-            min: 0,
-            max: 100,
+            value: currentValues.availability[currentValues.availability.length-1],
+            min: minValue,
+            max: maxValue,
           },
           QualityGaugeProps: {
-            value: randomIntFromInterval(0, 100),
-            min: 0,
-            max: 100,
+            value: currentValues.quality[currentValues.quality.length-1],
+            min: minValue,
+            max: maxValue,
           },
           LineChartProps: {
             data: [
@@ -124,64 +149,27 @@ broker.createService({
                 data: [
                   {
                     x: '06:00',
-                    y: randomIntFromInterval(1, 120),
+                    y: currentValues.performance[currentValues.performance.length-6] || 80,
                   },
                   {
                     x: '08:00',
-                    y: randomIntFromInterval(1, 120),
+                    y: currentValues.performance[currentValues.performance.length-5] || 80,
                   },
                   {
                     x: '10:00',
-                    y: randomIntFromInterval(1, 120),
+                    y: currentValues.performance[currentValues.performance.length-4] || 80,
                   },
                   {
                     x: '12:00',
-                    y: randomIntFromInterval(1, 120),
+                    y: currentValues.performance[currentValues.performance.length-3] || 80,
                   },
                   {
                     x: '14:00',
-                    y: randomIntFromInterval(1, 120),
+                    y: currentValues.performance[currentValues.performance.length-2] || 80,
                   },
                   {
                     x: '16:00',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: '18:00',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                ],
-              },
-              {
-                id: 'Quality',
-                data: [
-                  {
-                    x: '06:00',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: '08:00',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: '10:00',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: '12:00',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: '14:00',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: '16:00',
-                    y: randomIntFromInterval(1, 120),
-                  },
-                  {
-                    x: '18:00',
-                    y: randomIntFromInterval(1, 120),
+                    y: currentValues.performance[currentValues.performance.length-1],
                   },
                 ],
               },
@@ -190,31 +178,56 @@ broker.createService({
                 data: [
                   {
                     x: '06:00',
-                    y: randomIntFromInterval(1, 120),
+                    y: currentValues.availability[currentValues.availability.length-6] || 80,
                   },
                   {
                     x: '08:00',
-                    y: randomIntFromInterval(1, 120),
+                    y: currentValues.availability[currentValues.availability.length-5] || 80,
                   },
                   {
                     x: '10:00',
-                    y: randomIntFromInterval(1, 120),
+                    y: currentValues.availability[currentValues.availability.length-4] || 80,
                   },
                   {
                     x: '12:00',
-                    y: randomIntFromInterval(1, 120),
+                    y: currentValues.availability[currentValues.availability.length-3] || 80,
                   },
                   {
                     x: '14:00',
-                    y: randomIntFromInterval(1, 120),
+                    y: currentValues.availability[currentValues.availability.length-2] || 80,
                   },
                   {
                     x: '16:00',
-                    y: randomIntFromInterval(1, 120),
+                    y: currentValues.availability[currentValues.availability.length-1],
+                  },
+                ],
+              },
+              {
+                id: 'Quality',
+                data: [
+                  {
+                    x: '06:00',
+                    y: currentValues.quality[currentValues.quality.length-6] || 80,
                   },
                   {
-                    x: '18:00',
-                    y: randomIntFromInterval(1, 120),
+                    x: '08:00',
+                    y: currentValues.quality[currentValues.quality.length-5] || 80,
+                  },
+                  {
+                    x: '10:00',
+                    y: currentValues.quality[currentValues.quality.length-4] || 80,
+                  },
+                  {
+                    x: '12:00',
+                    y: currentValues.quality[currentValues.quality.length-3] || 80,
+                  },
+                  {
+                    x: '14:00',
+                    y: currentValues.quality[currentValues.quality.length-2] || 80,
+                  },
+                  {
+                    x: '16:00',
+                    y: currentValues.quality[currentValues.quality.length-1],
                   },
                 ],
               },
@@ -262,11 +275,17 @@ broker.start().then(async () => {
 
   let counter = 1;
   setInterval(
-    async () =>
+    async () => {
+
+      currentValues.performance.push(getNextValue(currentValues.performance[currentValues.performance.length-1]));
+      currentValues.availability.push(getNextValue(currentValues.availability[currentValues.availability.length-1]));
+      currentValues.quality.push(getNextValue(currentValues.quality[currentValues.quality.length-1]));
+
       broker.broadcast('graphql.publish', {
         tag: 'TEST',
         payload: `test ${counter++}`,
-      }),
+      })
+    },
     5000
   );
 
