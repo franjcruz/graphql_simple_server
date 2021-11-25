@@ -14,6 +14,11 @@ const maxValue = 100;
 const minAvgValue = 60;
 const maxValueVariation = 10;
 
+const randomIntFromInterval = (min, max) => {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
 const getNextValue = ( currentValue ) => {
 
   let nextValue = currentValue + randomIntFromInterval((-1 * maxValueVariation), maxValueVariation);
@@ -29,9 +34,9 @@ const getNextValue = ( currentValue ) => {
 };
 
 let currentValues = {
-  performance: [((maxValue + minAvgValue) / 2)],
-  availability: [((maxValue + minAvgValue) / 2)],
-  quality: [((maxValue + minAvgValue) / 2)],
+  performance: [getNextValue((maxValue + minAvgValue) / 2)],
+  availability: [getNextValue((maxValue + minAvgValue) / 2)],
+  quality: [getNextValue((maxValue + minAvgValue) / 2)],
 };
 
 broker.createService({
@@ -149,23 +154,23 @@ broker.createService({
                 data: [
                   {
                     x: '06:00',
-                    y: currentValues.performance[currentValues.performance.length-6] || 80,
+                    y: currentValues.performance[currentValues.performance.length-6] || getNextValue((maxValue + minAvgValue) / 2),
                   },
                   {
                     x: '08:00',
-                    y: currentValues.performance[currentValues.performance.length-5] || 80,
+                    y: currentValues.performance[currentValues.performance.length-5] || getNextValue((maxValue + minAvgValue) / 2),
                   },
                   {
                     x: '10:00',
-                    y: currentValues.performance[currentValues.performance.length-4] || 80,
+                    y: currentValues.performance[currentValues.performance.length-4] || getNextValue((maxValue + minAvgValue) / 2),
                   },
                   {
                     x: '12:00',
-                    y: currentValues.performance[currentValues.performance.length-3] || 80,
+                    y: currentValues.performance[currentValues.performance.length-3] || getNextValue((maxValue + minAvgValue) / 2),
                   },
                   {
                     x: '14:00',
-                    y: currentValues.performance[currentValues.performance.length-2] || 80,
+                    y: currentValues.performance[currentValues.performance.length-2] || getNextValue((maxValue + minAvgValue) / 2),
                   },
                   {
                     x: '16:00',
@@ -178,23 +183,23 @@ broker.createService({
                 data: [
                   {
                     x: '06:00',
-                    y: currentValues.availability[currentValues.availability.length-6] || 80,
+                    y: currentValues.availability[currentValues.availability.length-6] || getNextValue((maxValue + minAvgValue) / 2),
                   },
                   {
                     x: '08:00',
-                    y: currentValues.availability[currentValues.availability.length-5] || 80,
+                    y: currentValues.availability[currentValues.availability.length-5] || getNextValue((maxValue + minAvgValue) / 2),
                   },
                   {
                     x: '10:00',
-                    y: currentValues.availability[currentValues.availability.length-4] || 80,
+                    y: currentValues.availability[currentValues.availability.length-4] || getNextValue((maxValue + minAvgValue) / 2),
                   },
                   {
                     x: '12:00',
-                    y: currentValues.availability[currentValues.availability.length-3] || 80,
+                    y: currentValues.availability[currentValues.availability.length-3] || getNextValue((maxValue + minAvgValue) / 2),
                   },
                   {
                     x: '14:00',
-                    y: currentValues.availability[currentValues.availability.length-2] || 80,
+                    y: currentValues.availability[currentValues.availability.length-2] || getNextValue((maxValue + minAvgValue) / 2),
                   },
                   {
                     x: '16:00',
@@ -207,23 +212,23 @@ broker.createService({
                 data: [
                   {
                     x: '06:00',
-                    y: currentValues.quality[currentValues.quality.length-6] || 80,
+                    y: currentValues.quality[currentValues.quality.length-6] || getNextValue((maxValue + minAvgValue) / 2),
                   },
                   {
                     x: '08:00',
-                    y: currentValues.quality[currentValues.quality.length-5] || 80,
+                    y: currentValues.quality[currentValues.quality.length-5] || getNextValue((maxValue + minAvgValue) / 2),
                   },
                   {
                     x: '10:00',
-                    y: currentValues.quality[currentValues.quality.length-4] || 80,
+                    y: currentValues.quality[currentValues.quality.length-4] || getNextValue((maxValue + minAvgValue) / 2),
                   },
                   {
                     x: '12:00',
-                    y: currentValues.quality[currentValues.quality.length-3] || 80,
+                    y: currentValues.quality[currentValues.quality.length-3] || getNextValue((maxValue + minAvgValue) / 2),
                   },
                   {
                     x: '14:00',
-                    y: currentValues.quality[currentValues.quality.length-2] || 80,
+                    y: currentValues.quality[currentValues.quality.length-2] || getNextValue((maxValue + minAvgValue) / 2),
                   },
                   {
                     x: '16:00',
@@ -304,8 +309,3 @@ broker.start().then(async () => {
     '----------------------------------------------------------'
   );
 });
-
-const randomIntFromInterval = (min, max) => {
-  // min and max included
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
