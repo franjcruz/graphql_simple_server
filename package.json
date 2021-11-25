@@ -21,6 +21,7 @@
     "graphql-upload": "^11.0.0",
     "lodash": "^4.17.21",
     "moleculer": "^0.14.15",
+    "moleculer-repl": "^0.6.6",
     "moleculer-web": "^0.10.0",
     "object-hash": "^2.2.0"
   }
